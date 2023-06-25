@@ -1,0 +1,83 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    padding: 30px 50px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    margin: 10px auto;
+    max-width: 600px;
+}
+
+
+.visa-logo {
+    max-height: 75px;
+    max-width: 75px;
+}
+
+.profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    margin-bottom: 10px;
+}
+
+.img {
+    width: 200px;
+    height: 200px;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+    .profile-info b {
+        font-size: 17px;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .profile-info p {
+        font-size: 14px;
+        color: #777;
+        margin-bottom: 0;
+    }
+
+label {
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+    padding-left: 3px;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+    .form-control:focus {
+        box-shadow: none;
+        border: 1.5px solid #0779e4;
+    }
+
+.certificate-image {
+ max-width: 600px; 
+ max-height: 800px;
+ border-radius: 50%;
+}
+
+@media(max-width:576px) {
+    .wrapper {
+        padding: 25px 20px;
+    }
+}

@@ -1,0 +1,78 @@
+﻿@model EVisaApplicationSystem.Models.Application
+
+@{
+    ViewBag.Title = "EVisaApplicationFormForUser";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/evisaApplicationFormForuser.css" rel="stylesheet" />
+<!-- ... -->
+<!-- Check for success message -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Check for error message -->
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+<!-- ... -->
+<div class="wrapper bg-white mt-sm-5">
+    <div class="evisa-form-header">
+        <img src="~/Content/Images/e-visa logo.png" />
+        <h1>Evisa application form</h1>
+    </div>
+
+    @using (Html.BeginForm("EVisaApplicationFormForUser", "Application", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <div class="py-2">
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="country">Country</label>                 
+                        @Html.DropDownListFor(model => model.Country, new SelectList(ViewBag.Countries, "CountryValue", "CountryName"), "Select country", htmlAttributes: new { @id = "country", @class = "dropbox", required = "required" })                 
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3" id="lang">
+                    <label for="VisaType">Visa type</label>
+                    <div class="arrow">
+                         @Html.DropDownListFor(model => model.VisaType, new SelectList(ViewBag.VisaTypes, "VisaTypeValue", "VisaTypeName"), "Select country", htmlAttributes: new { @id = "visatype", @class = "dropbox", required = "required" })                 
+                    </div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="Entrydate">Entry date</label>
+                    <!-- Generate an input field for the entry date with specific attributes -->
+                    @Html.EditorFor(model => model.EntryDate, new { htmlAttributes = new { @class = "bg-light form-control", Type = "date", id = "entrydate", onfocusout = "checkEntrydate()", min = DateTime.Now.ToString("yyyy-MM-dd") } })
+                    <small class="text-danger" id="entry-error"></small>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label>Passport Number</label>
+                    <!-- Generate an input field for the passport number with specific attributes -->
+                    @Html.EditorFor(model => model.PassportNumber, new { htmlAttributes = new { @class = "bg-light form-control", id = "passportnumber", onfocusout = "checkPassportNumber()" } })
+                    <small class="text-danger" id="passport-error"></small>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="Medicalcertificate">Medical certificate</label>
+                    <!-- Input field for uploading a medical certificate file -->
+                    <input type="file" name="certificateFile" class="form-control-file" />
+                    <small class="text-danger" id="certificate-error"></small>
+                </div>
+            </div>
+            <!-- Submit and cancel buttons -->
+            <div class="py-3 pb-4 border-bottom" style="text-align:center">
+                <button class="btn btn-outline-primary mr-3" onclick="validateForm()">Apply</button>
+                <a href="@Url.Action("UserIndex", "User")" class="btn btn-outline-danger ms-1">Cancel</a>
+            </div>
+        </div>
+    }
+</div>
+<script src="~/Scripts/MyJS/evisaApplication.js"></script>
+
+

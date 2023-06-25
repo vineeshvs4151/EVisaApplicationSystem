@@ -1,0 +1,120 @@
+﻿@model IEnumerable<EVisaApplicationSystem.Models.Application>
+
+@{
+    ViewBag.Title = "RetrivesApplicationBystatusForAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/applicationByStatus.css" rel="stylesheet" />
+<!-- ... -->
+<!-- Check for success message -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Check for error message -->
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<!-- ... -->
+
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div class="table-container">
+            <table class="table" style="height: 50px">
+                <tr class="trclass-1">
+                    <th>
+                        Application id
+                    </th>
+                    <th>
+                        User id
+                    </th>
+                    <th>
+                        Application date
+                    </th>
+                    <th>
+                        Visa type
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        Entry date
+                    </th>
+                    <th>
+                        Visa duration
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="trclass-2">
+                        <td style="text-align: center">
+                            @Html.DisplayFor(modelItem => item.ApplicationId)
+                        </td>
+                        <td style="text-align: center">
+                            @Html.DisplayFor(modelItem => item.Userid)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ApplicationDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VisaType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Country)
+                        </td>
+
+                        <td class="status">
+                            <span class="status-value">@Html.DisplayFor(modelItem => item.Status)</span>
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EntryDate)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.VisaDuration)
+                        </td>
+                        <td>
+                            <!-- Create a link to retrieve application details -->
+                            <a href="@Url.Action("RetrivesApplicationByApplicationIdForAdmin", new { applicationId = item.ApplicationId })" class="icon-detail-link">
+                                <!-- Display an icon for application details -->
+                                <i class="fas fa-info-circle"></i>
+                            </a>
+                        </td>
+                        @if (item.Status== "waiting")
+                        {
+                        <td>
+                            <a href="@Url.Action("UpdateApplicationStatusByAdmin", new { applicationId = item.ApplicationId, status = "approved" })" class="icon-approved">
+                                <i class="fas fa-check-circle "></i>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="@Url.Action("UpdateApplicationStatusByAdmin", new { applicationId = item.ApplicationId, status = "unapproved" })" class="icon-unapproved">
+                                <i class="fas fa-times-circle "></i>
+                            </a>
+                        </td>
+                        }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<script src="~/Scripts/MyJS/RetrivesApplicationByStatusForAdmins.js"></script>
+
+

@@ -1,0 +1,125 @@
+﻿@model IEnumerable<EVisaApplicationSystem.Models.Application>
+
+@{
+    ViewBag.Title = "RetrivesApplicationByApplicationIdForUser";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/RetrivesApplicationByApplicationIdForUser.css" rel="stylesheet" />
+
+@foreach (var application in Model)
+{
+
+    <!-- Start of wrapper -->
+    <div class="wrapper bg-white mt-sm-5">
+        <div class="d-flex align-items-center mb-3 pb-1">
+            <img src="~/Content/Images/e-visa logo.png" alt="Logo" class="visa-logo">
+            <span class="h1 fw-bold mb-0">E-visa application</span>
+        </div>
+        <hr />
+        <!-- User Profile Section -->
+        <div class="profile-section text-center">
+            <div class="profile-image">
+                <img src="@Url.Content("~/UserProfileImages/" + Path.GetFileName(application.User.ImagePath))" class="img" />
+            </div>
+            <div class="profile-info">
+                <b>@application.User.Firstname @application.User.Lastname</b>
+                <p>@application.User.Email</p>
+            </div>
+        </div>
+        <!-- User Information Section -->
+        <div class="py-2">
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="firstname">First name</label>
+                    <div class="bg-light form-control">@application.User.Firstname</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Last name</label>
+                    <div class="bg-light form-control">@application.User.Lastname</div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="email">Date of birth</label>
+                    <div class="bg-light form-control">@application.User.Dateofbirth</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="phone">Gender</label>
+                    <div class="bg-light form-control">@application.User.Gender</div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="country">Phone number</label>
+                    <div class="bg-light form-control">@application.User.Phonenumber</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3" id="lang">
+                    <label for="language">Email</label>
+
+                    <div class="bg-light form-control">@application.User.Email</div>
+
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="country">State</label>
+                    <div class="bg-light form-control">@application.User.State</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3" id="lang">
+                    <label for="language">City</label>
+
+                    <div class="bg-light form-control">@application.User.City</div>
+
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="country">Address</label>
+                    <div class="bg-light form-control">@application.User.Address</div>
+                </div>
+            </div>
+            <!-- Application Information Section -->
+            <div class="text-center mt-2">
+                <b>Application information</b>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="firstname">Visa type</label>
+                    <div class="bg-light form-control">@application.VisaType</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Passport number</label>
+                    <div class="bg-light form-control">@application.PassportNumber</div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="firstname">Application date</label>
+                    <div class="bg-light form-control">@application.ApplicationDate</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Country</label>
+                    <div class="bg-light form-control">@application.Country</div>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="firstname">Entry date</label>
+                    <div class="bg-light form-control">@application.EntryDate</div>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="lastname">Visa duration</label>
+                    <div class="bg-light form-control">@application.VisaDuration</div>
+                </div>
+            </div>
+        </div>
+        <!-- Display Medical Certificate -->
+        <div class=" d-flex align-items-center justify-content-center">
+            <img src="@Url.Content("~/UserCertificatesImages/" + Path.GetFileName(application.MedicalCertificate))" class="certificate-image" />
+        </div>
+    </div>
+    <!-- End of wrapper -->
+    <div class="py-3 pb-4 border-bottom" style="text-align:center">
+        <a href="@Url.Action("RetrivesApplicationByUserIdForUser", "Application")" class="btn btn-outline-primary">Back</a>
+    </div>
+}

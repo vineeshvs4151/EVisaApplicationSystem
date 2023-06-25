@@ -1,0 +1,60 @@
+﻿/* Sets up the container for the background image */
+.image-container {
+    display: block; /* Renders the container as a block-level element */
+    position: relative; /* Positions the container relative to its normal position */
+    background-image: url('../Images/homepage bakground.jpg'); /* Specifies the URL of the background image */
+    background-size: cover; /* Scales the background image to cover the container */
+    background-position: center; /* Positions the background image at the center of the container */
+    width: 100%; /* Sets the width of the container to 100% of its parent */
+    height: 100vh; /* Sets the height of the container to 100% of the viewport height */
+}
+
+    /* Creates a semi-transparent overlay on top of the background image */
+    .image-container:before {
+        content: ""; /* Inserts empty content before the pseudo-element */
+        position: absolute; /* Positions the pseudo-element relative to its first positioned (non-static) ancestor */
+        top: 0; /* Positions the top edge of the pseudo-element at the top of the container */
+        left: 0; /* Positions the left edge of the pseudo-element at the left of the container */
+        width: 100%; /* Sets the width of the pseudo-element to 100% of its parent */
+        height: 100%; /* Sets the height of the pseudo-element to 100% of its parent */
+        background-color: rgba(0, 0, 0, 0.5); /* Sets the background color of the pseudo-element to black with 50% opacity */
+        z-index: 1; /* Sets the stacking order of the pseudo-element to be above the background image */
+    }
+
+/* Styles the text within the container */
+.image-text {
+    position: absolute; /* Positions the text relative to the container */
+    top: 50%; /* Positions the top edge of the text at the vertical center of the container */
+    left: 50%; /* Positions the left edge of the text at the horizontal center of the container */
+    transform: translate(-50%, -50%); /* Moves the text back by 50% of its own width and height, effectively centering it */
+    text-align: center; /* Centers the text within its container */
+    color: white; /* Sets the color of the text to white */
+    z-index: 2; /* Sets the stacking order of the text to be above the overlay */
+}
+
+/* Styles for the logo image */
+.logo-image {
+    max-width: 250px; /* Sets the maximum width for the logo image */
+    margin-top: 2px; /* Adds a small top margin to the logo image */
+}
+
+/* Styles for the heading within the text */
+.image-text h1 {
+    margin-top: 0; /* Removes the top margin of the heading */
+    font-size: 50px; /* Sets the font size of the heading */
+    font-weight: 700; /* Sets the font weight of the heading to bold */
+    margin-bottom: 0; /* Removes the bottom margin of the heading */
+    line-height: 1.6; /* Sets the line height of the heading */
+}
+
+/* Creates a white horizontal line */
+.white-line {
+    height: 2px; /* Sets the height of the line */
+    background-color: white; /* Sets the color of the line to white */
+    margin: 10px auto; /* Centers the line horizontally and adds a small margin above and below it */
+}
+
+/* Styles for the paragraph text within the container */
+.image-text p {
+    margin-top: 5px; /* Adds a small top margin to the paragraph text */
+}

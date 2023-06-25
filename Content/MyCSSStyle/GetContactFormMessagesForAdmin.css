@@ -1,0 +1,23 @@
+﻿
+.row {
+    height: 100vh; /* Set the height of the row to 100% of the viewport height */
+    margin-top: 40px; /* Add margin space on the top of the row */
+}
+
+
+.trclass-1 {
+    white-space: nowrap; /* Prevent wrapping of content within the table row */
+    background-color: #00a4ff; /* Set the background color for rows with the class 'trclass-1' */
+}
+
+
+/* Set the font-weight property to 600(bold) for rows with the class 'trclass-2' */
+.trclass-2 {
+    font-weight: 600;
+}
+
+
+/* Set the height of the table to 50px */
+.table {
+    height: 50px;
+}

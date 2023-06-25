@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EVisaApplicationSystem.Models.Country>
+
+@{
+    ViewBag.Title = "RetrievesAllCountriesForAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Include the CSS stylesheet -->
+<link href="~/Content/MyCSSStyle/RetrievesAllCountriesForAdmin.css" rel="stylesheet" />
+
+<!-- Check for success message -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Check for error message -->
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<!-- Start of the main content -->
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="table-container">
+            <table class="table">
+                <!-- Table header row -->
+                <tr class="trclass-1">
+                    <th></th>
+                    <th>
+                        <!-- Column: Country name -->
+                        Country name
+                    </th>
+                    <th></th>
+                </tr>
+
+                <!-- Loop through each item in the model -->
+                @foreach (var item in Model)
+                {
+                    <tr class="trclass-2">
+                        <td></td>
+
+                        <td>
+                            <!-- Display the Country name for the current item -->
+                            @Html.DisplayFor(modelItem => item.CountryName)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>

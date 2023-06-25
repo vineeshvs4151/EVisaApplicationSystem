@@ -1,0 +1,53 @@
+ 
+               Project Name: Online Job Portal
+
+1) Main Home page
+	Aboutus
+	Signin
+	SignUp
+	Contactus
+ 
+Signin - get the username and password from register table
+    .Username - for Admin uname=admin, password=admin, 
+		user login <---- get from signup page.
+    .Password
+
+
+
+Signup -create table [ These filelds are Must]
+	First Name
+	Last Name
+	Date of Birth - Date picker format or DD MM YYY format in seperate drop down list
+	Gender - Radio button
+	Phonenumber
+	Emailaddress
+	Address
+	State - Drop down list
+	City - Drop down lsit that matched with State
+	Username	
+	Password
+	Confirm Password
+
+Contactus 
+	Contact Information.
+
+2) Admin Home Page:
+	Add JD - table - [Job Id, Job Name, Eligibility, exp, location, salary, No of positions, Adv image]
+	Update JD - view the table
+	View Job Application 
+	View User details
+
+3) User Home Page:
+	Apply Job - Attch resume in pdf file format, then photo
+	Job Status	
+	Edit Profile - View get from register table
+
+
+
+
+
+
+
+
+ 
+   

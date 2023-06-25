@@ -1,0 +1,98 @@
+﻿/* Styling for the container of the login form */
+.Login-form-container {
+    width: 60%; /* Set width to 60% of the parent container */
+    margin: auto; /* Center the container horizontally using auto margins */
+    padding-top: 100px; /* Add padding on top */
+    background: #fff3f3; /* Set background color */
+    border-radius: 25px; /* Apply border radius */
+    margin-bottom: 5%; /* Add bottom margin */
+    margin-top: 60px; /* Add top margin */
+    padding: 20px 12px; /* Add padding */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    border: 1px solid black; /* Add a black border */
+}
+
+/* Styling for the header section of the login form */
+.Login-form-header {
+    display: flex; /* Use flexbox layout */
+    width: 40%; /* Set width to 40% of the parent container */
+    margin: auto; /* Center the header horizontally using auto margins */
+    padding: 20px 12px; /* Add padding */
+}
+
+    /* Styling for the image within the login form header */
+    .Login-form-header img {
+        width: 60px; /* Set the width of the image */
+        height: 60px; /* Set the height of the image */
+    }
+
+    /* Styling for the heading within the login form header */
+    .Login-form-header h1 {
+        margin-top: 4px; /* Adjust top margin */
+        margin-left: 2px; /* Adjust left margin */
+        font-size: 40px; /* Set the font size of the heading */
+        font-weight: 600; /* Set the font weight of the heading */
+    }
+
+/* Styling for the login form */
+.login-form {
+    width: 40%; /* Set width to 40% of the parent container */
+    margin: auto; /* Center the form horizontally using auto margins */
+    padding: 20px 12px; /* Add padding */
+    margin-top: 10px; /* Add top margin */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Styling for the input fields within the login form */
+.login-form-text-box input {
+    width: 100%; /* Set the width of the input field */
+    padding: 15px; /* Add padding */
+    margin-bottom: 17px; /* Add bottom margin */
+    border: 1px solid black; /* Add a black border */
+}
+
+    /* Styling for the input fields on hover within the login form */
+    .login-form-text-box input:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); /* Add box shadow effect on hover */
+    }
+
+/* Styling for the labels within the login form */
+.login-form-text-box label {
+    margin-top: 10px; /* Add top margin */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+/* Styling for the error messages within the login form */
+.login-form-text-box .error-message {
+    color: red; /* Set the color of the error message to red */
+}
+
+/* Styling for the submit button */
+.submit-btn {
+    display: inline-block; /* Display the button as an inline element */
+    text-decoration: none; /* Remove underline text decoration */
+    color: black; /* Set the color of the button text */
+    margin-top: 20px; /* Add top margin */
+    margin-right: 5px; /* Add right margin */
+    margin-left: 5px; /* Add left margin */
+    padding: 12px 34px; /* Add padding */
+    font-size: 13px; /* Set the font size of the button */
+    border: 1px solid black; /* Add a black border */
+    background: transparent; /* Set transparent background */
+    position: relative; /* Set the button position as relative */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+    /* Styling for the submit button on hover */
+    .submit-btn:hover {
+        border: 1px solid #1890ff; /* Change the border color on hover */
+        background: #1890ff; /* Change the background color on hover */
+        transition: 1s; /* Add a transition effect */
+    }
+
+/* Styling for the paragraphs within the login form */
+.login-form p {
+    margin-top: 10px; /* Add top margin */
+    margin-bottom: 10px; /* Add bottom margin */
+    justify-content: space-between; /* Justify content between the paragraphs */
+}

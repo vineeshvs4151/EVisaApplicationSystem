@@ -1,0 +1,146 @@
+﻿/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Reset default margins and paddings for all elements */
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include borders and padding in the element's total width and height */
+}
+
+
+/* Styling for the body */
+body {
+    font-family: 'Poppins', sans-serif; /* Set the font family to 'Poppins' with a fallback to sans-serif */
+    background-color: aliceblue; /* Set the background color to aliceblue */
+}
+
+
+/* Style for the wrapper container */
+.wrapper {
+    padding: 30px 30px; /* Set padding for the wrapper (30px top and bottom, 30px left and right) */
+    border: 1px solid #ddd; /* Set a border for the wrapper (1px solid with color #ddd) */
+    border-radius: 15px; /* Set border radius for the wrapper (15px) */
+    margin: 10px auto; /* Set margin for the wrapper (10px top and bottom, auto left and right) */
+    max-width: 700px; /* Set the maximum width for the wrapper (700px) */
+}
+
+
+/* Style for the logostyle class */
+.logostyle {
+    width: 100px; /* Set the width of the element to 100px */
+    height: 100px; /* Set the height of the element to 100px */
+}
+
+
+
+/* Style for the label element */
+label {
+    margin-bottom: 0; /* Remove the bottom margin */
+    font-size: 14px; /* Set the font size to 14 pixels */
+    font-weight: 500; /* Set the font weight to 500 (medium) */
+    color: #777; /* Set the text color to #777 */
+    padding-left: 3px; /* Add left padding of 3 pixels */
+}
+
+
+/* Style for the form-control class */
+.form-control {
+    border-radius: 10px; /* Set the border radius to 10px */
+}
+
+
+    /* Style for the focused form-control class */
+    .form-control:focus {
+        box-shadow: none; /* Remove the box shadow when the element is focused */
+        border: 1.5px solid #0779e4; /* Set a 1.5px solid border with color #0779e4 when the element is focused */
+    }
+
+
+
+/* Style for the select element */
+select {
+    display: block; /* Render the select element as a block-level element */
+    width: 100%; /* Set the width of the select element to 100% */
+    border: 1px solid #ddd; /* Set a 1px solid border with color #ddd */
+    border-radius: 10px; /* Set the border radius to 10px */
+    height: 40px; /* Set the height of the select element to 40px */
+    padding: 5px 10px; /* Set the padding inside the select element (5px top and bottom, 10px left and right) */
+}
+
+    /* Style for the focused select element */
+    select:focus {
+        outline: none; /* Remove the default outline when the select element is focused */
+    }
+
+
+
+
+/* Style for the button class */
+.button {
+    background-color: #fff; /* Set the background color to #fff (white) */
+    color: #0779e4; /* Set the text color to #0779e4 */
+}
+
+    /* Style for the button class on hover */
+    .button:hover {
+        background-color: #0779e4; /* Set the background color to #0779e4 */
+        color: #fff; /* Set the text color to #fff (white) */
+    }
+
+
+
+/* Style for the .btn-primary class */
+.btn-primary {
+    background-color: #0779e4; /* Set the background color to #0779e4 */
+}
+
+
+.contact-visa-logo {
+    text-align: center;
+}
+
+.contact-heading-div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.contact-heading {
+    color: black;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+
+.contact-update-btn {
+    text-align: center;
+}
+
+/* Style for the .danger class */
+.danger {
+    background-color: #fff; /* Set the background color to #fff (white) */
+    color: #e20404; /* Set the text color to #e20404 */
+    border: 1px solid #ddd; /* Set a 1px solid border with color #ddd */
+}
+
+    /* Style for the .danger class on hover */
+    .danger:hover {
+        background-color: #e20404; /* Set the background color to #e20404 */
+        color: #fff; /* Set the text color to #fff (white) */
+    }
+
+
+
+
+/* Media query for small screens */
+@media(max-width:576px) {
+    /* Adjust padding for the main wrapper container */
+    .wrapper {
+        padding: 25px 20px;
+    }
+}
+
+/* Styling for the pb-7 class */
+.pb-7 {
+    margin-bottom: 20px;
+}

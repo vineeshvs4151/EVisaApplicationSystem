@@ -1,0 +1,17 @@
+﻿/* Styles for the visatype container */
+.visatype-container {
+    display: flex; /* Use flexbox to align items */
+    justify-content: center; /* Horizontally center the items */
+    align-items: center; /* Vertically center the items */
+    height: 80vh; /* Set the height of the container to 80% of the viewport height */
+    background-color: #e2e8f0; /* Set the background color of the container */
+}
+
+/* Styles for the form box */
+.form-box {
+    background-color: #fff; /* Set the background color of the form box */
+    padding: 20px; /* Add padding around the content inside the form box */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a box shadow to the form box */
+    border-radius: 1rem; /* Apply a border radius of 1rem to the form box */
+    max-width: 500px; /* Set the maximum width of the form box to 500px */
+}

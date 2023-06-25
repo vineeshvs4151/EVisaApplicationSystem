@@ -1,0 +1,56 @@
+﻿@model EVisaApplicationSystem.Models.Contact
+
+@{
+    ViewBag.Title = "RetrievesContactFormMessageDetailsById";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/RetrievesContactFormMessageDetailsById.css" rel="stylesheet" />
+
+@using (Html.BeginForm("AddAdminReplyToContactFormMessage", "Home", FormMethod.Post))
+{
+    @Html.AntiForgeryToken() <!-- Generate a hidden anti-forgery token for security -->
+
+    <div class="wrapper bg-white mt-sm-5">
+        <div class="contact-visa-logo">
+            <img src="~/Content/Images/e-visa logo.png" class="logostyle">  <!-- Display the logo image -->
+        </div>
+
+        <div class="pb-7 border-bottom contact-heading-div">
+            <span class="contact-heading">Contact message reply Form</span>  <!-- Heading for the form -->
+        </div>
+
+        <div class="py-2 ">
+
+            <div class="row py-2">
+                <div class="col-md-6">
+                    <label for="Name"><b>Name</b></label>
+                    <p> @Html.DisplayFor(model => model.Name)</p>
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="Lastname"><b>Email</b></label>
+                    <p> @Html.DisplayFor(model => model.Email)</p>
+                </div>
+            </div>
+            <div class="row py-2">
+                <div class="col-md-6 ">
+                    <label for="Message"><b>Message</b></label>
+                    <div>
+                        <p> @Html.DisplayFor(model => model.Message)</p>
+                    </div>
+
+                </div>
+                <div class="col-md-6 pt-md-0 pt-3">
+                    <label for="Description"><b>Reply</b></label>
+                    @Html.TextAreaFor(model => model.RepliedMessage, new { @class = "form-control", rows = 4, id = "message", required = "required", onfocusout = "checkMessage()" })
+                    <small class="text-danger" id="message-error"></small>  <!-- Display error message for the message reply field -->
+                </div>
+            </div>
+            <div class="py-3 pb-4 border-bottom contact-update-btn">
+                <input type="hidden" name="messageId" value="@Model.Id" /> <!-- Hidden input field to store the current item ID -->
+                <button class="btn btn-outline-primary ms-1 type" type="submit" onclick="checkValidation()">Update</button>
+                <a href="@Url.Action("GetAllContactFormMessagesForAdmin", "Home")" class="btn btn-outline-danger ms-1">Cancel</a>
+            </div>
+        </div>
+    </div>
+}
+<script src="~/Scripts/MyJS/RetrievesContactFormMessageDetailsById.js"></script>       

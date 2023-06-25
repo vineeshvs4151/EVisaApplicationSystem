@@ -1,0 +1,100 @@
+﻿/* Styling for the sub-header section */
+.sub-header {
+    height: 100vh; /* Set the height of the sub-header section to 100% of the viewport height */
+    width: 100%; /* Set the width of the sub-header section to 100% */
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Images/about.jpg'); /* Apply a linear gradient and background image */
+    background-position: center; /* Set the background position to the center */
+    background-size: cover; /* Scale the background image to cover the entire container */
+    position: relative; /* Set the position of the sub-header section as relative */
+}
+
+/* Styling for the text box within the sub-header section */
+.sub-header-text-box {
+    width: 90%; /* Set the width of the text box to 90% */
+    color: #fff; /* Set the text color to white */
+    position: absolute; /* Set the position of the text box as absolute */
+    top: 50%; /* Position the text box vertically at 50% from the top */
+    left: 50%; /* Position the text box horizontally at 50% from the left */
+    transform: translate(-50%, -50%); /* Center the text box using transform */
+    text-align: center; /* Center-align the text within the text box */
+}
+
+    /* Styling for the heading within the sub-header text box */
+    .sub-header-text-box h1 {
+        font-size: 50px; /* Set the font size of the heading */
+    }
+
+    /* Styling for the paragraph within the sub-header text box */
+    .sub-header-text-box p {
+        margin: 10px 0 40px; /* Set margins for the paragraph */
+        font-size: 14px; /* Set the font size of the paragraph */
+        color: #fff; /* Set the text color to white */
+    }
+
+/* Styling for the row container */
+.row {
+    margin-top: 5%; /* Add top margin */
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space the columns evenly */
+}
+
+/* Styling for the about-us content */
+.about-us {
+    width: 80%; /* Set the width of the about-us content */
+    margin: auto; /* Center the content horizontally using auto margins */
+}
+
+/* Styling for the columns within the about-us content */
+.about-column {
+    flex-basis: 48%; /* Set the basis width of the column to 48% */
+    padding: 30px 2px; /* Add padding to the column */
+}
+
+    /* Styling for the image within the about column */
+    .about-column img {
+        width: 100%; /* Set the width of the image to 100% */
+        position: center; /* Set the position of the image as center */
+    }
+
+    /* Styling for the heading within the about column */
+    .about-column h1 {
+        font-size: 30px; /* Set the font size of the heading */
+        padding-top: 0; /* Remove padding on top of the heading */
+    }
+
+/* Styling for the explore button */
+.expolre-btn {
+    display: inline-block; /* Display the button as an inline element */
+    text-decoration: none; /* Remove underline text decoration */
+    color: black; /* Set the color of the button text */
+    margin-top: 20px; /* Add top margin */
+    padding: 12px 34px; /* Add padding */
+    font-size: 13px; /* Set the font size of the button */
+    border: 1px solid black; /* Add a black border */
+    background: transparent; /* Set transparent background */
+    position: relative; /* Set the button position as relative */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+    /* Styling for the explore button on hover */
+    .expolre-btn:hover {
+        border: 1px solid #f44336; /* Change the border color on hover */
+        background: #f44336; /* Change the background color on hover */
+        transition: 1s; /* Add a transition effect */
+    }
+
+/* Media query for screens with a maximum width of 700px */
+@media (max-width: 700px) {
+    .row {
+        flex-direction: column; /* Change the flex direction to vertical stacking */
+    }
+
+    .sub-header h1 {
+        font-size: 30px; /* Set the font size of the sub-header heading */
+        font-weight: 600; /* Set the font weight of the sub-header heading */
+        margin-top: 150px; /* Add top margin to the sub-header heading */
+    }
+}
+
+
+/* about-us content styling end */

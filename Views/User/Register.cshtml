@@ -1,0 +1,137 @@
+﻿@model EVisaApplicationSystem.Models.User
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/UserRegister.css" rel="stylesheet" />
+<section class="Register-form-container">
+    <div class="Register-form-header">
+        <img src="~/Content/Images/e-visa logo.png" />
+        <h1>Register form</h1>
+    </div>
+
+    <div class="Register-form">
+        @using (Html.BeginForm("Register", "User", FormMethod.Post, new { @class = "register", enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="Register-form-text-box">
+                <label>First name</label>
+                @Html.EditorFor(model => model.Firstname, new { htmlAttributes = new { id = "fname", onfocusout = "CheckFirstName()", required = "required", placeholder = "Enter your first name" } })
+                @Html.ValidationMessageFor(model => model.Firstname, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Last name</label>
+                @Html.EditorFor(model => model.Lastname, new { htmlAttributes = new { id = "lname", onfocusout = "CheckLastName()", required = "required", placeholder = "Enter your last name" } })
+                @Html.ValidationMessageFor(model => model.Lastname, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Date of birth</label>
+                @Html.EditorFor(model => model.Dateofbirth, new { htmlAttributes = new { @type = "date", id = "dateofbirth", onfocusout = "CheckDateOfBirth()", required = "required" } })
+                @Html.ValidationMessageFor(model => model.Dateofbirth, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="gender-box">
+                <label>Gender</label>
+                <div>
+                    @Html.RadioButtonFor(model => model.Gender, "male", new { htmlAttributes = new { @class = "gender-input", id = "malegender", required = "required" } })
+                    <label>Male</label>
+                </div>
+                <div>
+                    @Html.RadioButtonFor(model => model.Gender, "female", new { htmlAttributes = new { @class = "gender-input", id = "femalegender", required = "required" } })
+                    <label>Female</label>
+                </div>
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Email</label>
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { id = "email", onfocusout = " CheckEmail()", required = "required", placeholder = "Enter your email" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+
+            <div class="Register-form-text-box">
+                <label>Phone number</label>
+                @Html.EditorFor(model => model.Phonenumber, new { htmlAttributes = new { id = "phonenumberid", onfocusout = "CheckPhoneNumber()", required = "required", placeholder = "Enter your phone number" } })
+                @Html.ValidationMessageFor(model => model.Phonenumber, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+
+            <div class="Register-form-text-box">
+                <label>Address</label>
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { id = "address", onfocusout = "CheckAddress()", required = "required", placeholder = "Enter your address" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>State</label>
+                @Html.DropDownListFor(model => model.State, new SelectList(ViewBag.States, "Statesvalue", "Statesname"), "Select state", htmlAttributes: new { @id = "state", @class = "dropbox" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>City</label>
+                @Html.DropDownListFor(model => model.City, new SelectList(""),"Select city", htmlAttributes: new { @id = "city", @class = "dropbox" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Username</label>
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { id = "username", onfocusout = "CheckUsername()", required = "required", placeholder = "Enter your username" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Password</label>
+                @Html.PasswordFor(model => model.Password, new { id = "password", onfocusout = "CheckPassword()", required = "required", placeholder = "Enter your password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div class="Register-form-text-box">
+                <label>Confirm password</label>
+                @Html.PasswordFor(model => model.ConfirmPassword, new { id = "confirmpassword", onfocusout = "CheckConfirmPassword()", required = "required", placeholder = "Enter your confirm password" })
+                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+
+            <div>
+                <label>Image upload</label>
+                <input type="file" name="ImageFile" class="form-control-file" />
+                @Html.ValidationMessageFor(model => model.ImagePath, "", new { @class = "text-danger" })
+                <small class="text-danger"></small>
+            </div>
+            <input type="submit" value="Register" id="button" onclick="validateForm()" class="submit-btn" />
+            <p>Already have an account? @Html.ActionLink("Login", "Login", "Login")</p>
+
+        }
+    </div>
+
+</section>
+<script src="~/Scripts/MyJS/UserRegister.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#state").change(function () {
+            $.get("/User/Getcity", { Statevalue: $("#state").val() },
+                function (data) {
+                    $("#city").empty();
+                    $.each(data, function (index, row) {
+                        $("#city").append("<option value='" + row.Cityvalue + "'>" + row.Cityname + "</option>");
+                    });
+                });
+        });
+    });
+</script>
+

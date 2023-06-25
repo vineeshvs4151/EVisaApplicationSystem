@@ -1,0 +1,75 @@
+﻿.wrapper {
+    padding: 30px 30px; /* Padding on top and bottom: 30px; Padding on left and right: 30px */
+    border: 1px solid #ddd; /* Border with 1px width and #ddd color */
+    border-radius: 15px; /* Border radius of 15px */
+    margin: 100px auto; /* Margin: 100px on top and bottom, auto horizontally */
+    max-width: 700px; /* Maximum width of 700px */
+}
+
+
+.evisa-form-header {
+    display: flex; /* Use flexbox layout */
+    width: 90%; /* Set width to 90% of the parent container */
+    margin: auto; /* Center the header horizontally using auto margins */
+    padding: 20px 12px; /* Add padding around the header */
+}
+
+ 
+    .evisa-form-header img {
+        width: 60px; /* Set the width of the image */
+        height: 60px; /* Set the height of the image */
+    }
+
+    
+    .evisa-form-header h1 {
+        margin-top: 4px; /* Adjust top margin */
+        margin-left: 2px; /* Adjust left margin */
+        font-size: 40px; /* Set the font size of the heading */
+        font-weight: 600; /* Set the font weight of the heading */
+    }
+
+label {
+    margin-bottom: 0; /* No bottom margin */
+    font-size: 14px; /* Font size of 14px */
+    font-weight: 500; /* Font weight of 500 (bold) */
+    color: #777; /* Text color: #777 */
+    padding-left: 3px; /* Left padding of 3px */
+}
+
+.form-control {
+    border-radius: 10px; /* Border radius of 10px */
+}
+
+input[placeholder] {
+    font-weight: 500; /* Font weight of 500 (bold) for inputs with a placeholder */
+}
+
+.form-control:focus {
+    box-shadow: none; /* No box shadow when the form control is focused */
+    border: 1.5px solid #0779e4; /* Border with 1.5px width and #0779e4 color when the form control is focused */
+}
+
+select {
+    display: block; /* Display the select element as a block-level element */
+    width: 100%; /* Width of 100% */
+    border: 1px solid #ddd; /* Border with 1px width and #ddd color */
+    border-radius: 10px; /* Border radius of 10px */
+    height: 40px; /* Height of 40px */
+    padding: 5px 10px; /* Padding: 5px on top and bottom, 10px on left and right */
+    /* -webkit-appearance: none; */ /* Uncomment this line to remove default styles on select elements in WebKit browsers */
+}
+
+    select:focus {
+        outline: none; /* Remove the default outline when the select element is focused */
+    }
+
+/* Media query for screens with a maximum width of 700px */
+@media(max-width:700px) {
+    .wrapper {
+        padding: 25px 20px; /* Padding on top and bottom: 25px; Padding on left and right: 20px */
+    }
+
+    .pb-7 {
+        margin-bottom: 20px; /* Bottom margin of 20px */
+    }
+}

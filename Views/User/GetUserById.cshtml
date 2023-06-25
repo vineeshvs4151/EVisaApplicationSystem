@@ -1,0 +1,143 @@
+﻿
+@model List<EVisaApplicationSystem.Models.User>
+
+@{
+    ViewBag.Title = "GetUserById";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+@foreach (var user in Model)
+{
+    <section>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center position-relative">
+                            <div class=" d-flex align-items-center justify-content-center">
+                                <img src="@Url.Content("~/UserProfileImages/" + Path.GetFileName(user.ImagePath))" alt="avatar" style="max-width: 200px; max-height: 200px; border-radius: 50%"/>
+                            </div>
+                            <h5 class="my-3">@user.Firstname @user.Lastname</h5>
+                            <p>@user.Email</p>
+                            <div class="d-flex justify-content-center mb-2">
+
+
+
+                                <a href="@Url.Action("DeleteUserProfile", "User")" class="btn btn-outline-danger ms-1">Deactivate</a>
+                                <a href="@Url.Action("EditProfile", "User")" class="btn btn-outline-secondary ms-1">Edit Profile</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 form-section">
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Firstname</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@user.Firstname</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Lastname</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">@user.Lastname</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Gender</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.Gender)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Date of birth</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.Dateofbirth)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Email</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.Email)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Phone</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">
+                                        @Html.DisplayFor(model => user.Phonenumber)
+                                    </p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Address</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.Address)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">State</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.State)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">City</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.City)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Username</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0"> @Html.DisplayFor(model => user.Username)</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <p class="mb-0">Password</p>
+                                </div>
+                                <div class="col-sm-9">
+                                    <p class="text-muted mb-0">****************</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+}
+

@@ -1,0 +1,57 @@
+﻿@model EVisaApplicationSystem.Models.Contact
+
+@{
+    ViewBag.Title = "AddContactFormMessageByUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/AddmessagebyUser.css" rel="stylesheet" />
+<section class="sub-header">
+    <div class="sub-header-text-box">
+        <h1>Contact us</h1>
+        <p>
+            We'd love to hear from you! Feel free to reach out to our friendly team for any inquiries or assistance you may need.
+            <br>
+            Our dedicated customer support is ready to help you with your questions, feedback, or concerns. Contact us today!
+        </p>
+    </div>
+</section>
+<!-- contact-us location section start -->
+<section class="location">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497699.6983259305!2d77.6309395!3d12.9539974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1685620330387!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+<!-- contact-us location section end -->
+<!-- contact-us infromation section start -->
+<section class="contact-us">
+    <div class="row">
+
+        <div class="contact-column">
+            <div>
+                <i class="fa-solid fa-house"></i>
+                <h5>123,XYZ Road, BSK 3,ACD Builiding</h5>
+            </div>
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                <h5>+74939834693</h5>
+            </div>
+            <div>
+                <i class="fa-solid fa-envelope"></i>
+                <h5>EdufordUniversity@gmail.com</h5>
+            </div>
+        </div>
+        <div class="contact-column">
+            @using (Html.BeginForm("AddContactFormMessageByUser", "Home", FormMethod.Post))
+            {
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", id = "name", onfocusout = "checkName()", required = "required", placeholder = "Enter your name" } ,})
+                <small class="text-danger" id="name-error"></small> <!-- Display error message for the name field -->
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", id = "email", onfocusout = "checkEmail()", required = "required", placeholder = "Enter your email" } })
+                <small class="text-danger" id="email-error"></small> <!-- Display error message for the Email field -->
+                @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = 4, id = "message", onfocusout = "checkMessage()", required = "required", placeholder = "Enter your message" })
+                <small class="text-danger" id="message-error"></small> <!-- Display error message for the message field -->
+                <button type="submit" class="submit-btn" onclick="checkValidation()">Send message</button>
+            }
+        </div>
+
+    </div>
+</section>
+<!-- contact-us infromation section end -->
+<script src="~/Scripts/MyJS/AddContactMessage.js"></script>

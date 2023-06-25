@@ -1,0 +1,92 @@
+﻿@model IEnumerable<EVisaApplicationSystem.Models.Contact>
+
+@{
+    ViewBag.Title = "RetrievesContactFormDetailsByStatus";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Include the CSS stylesheet -->
+<link href="~/Content/MyCSSStyle/RetrievesContactFormDetailsByStatus.css" rel="stylesheet" />
+
+<!-- Check for success message -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Check for error message -->
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<!-- Start of the main content -->
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div class="table-container">
+            <table class="table">
+                <!-- Table header row -->
+                <tr class="trclass-1">
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Message
+                    </th>
+                    <th>
+                        Message status
+                    </th>
+                    <th>
+                        Replied message
+                    </th>
+                    <th></th>
+                </tr>
+
+                <!-- Loop through each item in the model -->
+                @foreach (var item in Model)
+                {
+            <tr class="trclass-2">
+                <td>
+                    <!-- Display the FirstName -->
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <!-- Display the LastName -->
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <!-- Display the Title -->
+                    @Html.DisplayFor(modelItem => item.Message)
+                </td>
+                <td class="status">
+
+                    <span class="status-value">@Html.DisplayFor(modelItem => item.MessageStatus)</span>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.RepliedMessage)
+                </td>
+                @if (item.MessageStatus == "Notreplied")
+                {
+                    <td>
+                        <!-- Update link -->
+                        <a href="@Url.Action("RetrievesContactFormMessageDetailsById", new { messageId = item.Id })" class="icon-update-link">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </td>
+                 }
+                </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<script src="~/Scripts/MyJS/RetrievesContactFormDetailsByStatus.js"></script>

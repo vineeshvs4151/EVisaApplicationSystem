@@ -1,0 +1,65 @@
+﻿@model IEnumerable<EVisaApplicationSystem.Models.Visatype>
+
+@{
+    ViewBag.Title = "RetrievesAllVisaTypeForAdmin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Include the CSS stylesheet -->
+<link href="~/Content/MyCSSStyle/RetrievesAllVisaTypeForAdmin.css" rel="stylesheet" />
+
+<!-- Check for success message -->
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<!-- Check for error message -->
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="table-container">
+            <table class="table">
+                <!-- Table header row -->
+                <tr class="trclass-1">
+                    <th></th>
+                    <th>
+                        <!-- Column: Visatype name -->
+                        Visa type
+                    </th>
+                    <th>
+                        <!-- Column: VisaDuration name -->
+                        Visa duration
+                    </th>
+                    <th></th>
+                </tr>
+
+                <!-- Loop through each item in the model -->
+                @foreach (var item in Model)
+                {
+            <tr class="trclass-2">
+                <td></td>
+                <td>
+                    <!-- Display the Visatype name for the current item -->
+                    @Html.DisplayFor(modelItem => item.VisaTypeName)
+                </td>
+                <td>
+                    <!-- Display the Visatype name for the current item -->
+                    @Html.DisplayFor(modelItem => item.VisaDuration) months
+                </td>
+            </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-lg-4"></div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model EVisaApplicationSystem.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/MyCSSStyle/login.css" rel="stylesheet" />
+<section class="Login-form-container">
+    <div class="Login-form-header">
+        <img src="~/Content/Images/e-visa logo.png" />
+        <h1>Login form</h1>
+    </div>
+
+    <div class="login-form">
+        @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login" }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="login-form-text-box">
+                <label>Username</label>
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { id = "username", onfocusout = "CheckUsername()", required = "required", placeholder = "Enter your username" } })
+                <small class="text-danger"></small>
+            </div>
+            <div class="login-form-text-box">
+                <label>Password</label>
+                @Html.PasswordFor(model => model.Password, new { id = "password", onfocusout = "CheckPassword()", placeholder = "Enter your password", required = "required" })
+                <small class="text-danger"></small>
+            </div>
+            <button type="submit" class="submit-btn" value="Login" id="button" onclick="validateForm()">Login</button>
+
+            <p>Don't have an account? @Html.ActionLink("Register", "Register", "User")</p>
+
+        }
+    </div>
+
+</section>
+<script src="~/Scripts/MyJS/Login.js"></script>

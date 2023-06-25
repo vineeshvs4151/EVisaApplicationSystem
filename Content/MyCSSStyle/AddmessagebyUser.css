@@ -1,0 +1,137 @@
+﻿/* Styling for the sub-header section */
+.sub-header {
+    height: 100vh; /* Set the height of the sub-header section to 100% of the viewport height */
+    width: 100%; /* Set the width of the sub-header section to 100% */
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('../Images/contact-us.jpg'); /* Apply a linear gradient and background image */
+    background-position: center; /* Set the background position to the center */
+    background-size: cover; /* Scale the background image to cover the entire container */
+    position: relative; /* Set the position of the sub-header section as relative */
+}
+
+/* Styling for the text box within the sub-header section */
+.sub-header-text-box {
+    width: 90%; /* Set the width of the text box to 90% */
+    color: #fff; /* Set the text color to white */
+    position: absolute; /* Set the position of the text box as absolute */
+    top: 50%; /* Position the text box vertically at 50% from the top */
+    left: 50%; /* Position the text box horizontally at 50% from the left */
+    transform: translate(-50%, -50%); /* Center the text box using transform */
+    text-align: center; /* Center-align the text within the text box */
+}
+
+    /* Styling for the heading within the sub-header text box */
+    .sub-header-text-box h1 {
+        font-size: 50px; /* Set the font size of the heading */
+    }
+
+    /* Styling for the paragraph within the sub-header text box */
+    .sub-header-text-box p {
+        margin: 10px 0 40px; /* Set margins for the paragraph */
+        font-size: 14px; /* Set the font size of the paragraph */
+        color: #fff; /* Set the text color to white */
+    }
+
+/* Styling for the location section within the contact-us content */
+.location {
+    width: 80%; /* Set the width of the location section */
+    margin: auto; /* Center the content horizontally using auto margins */
+    padding: 80px 0; /* Add padding to the location section */
+}
+
+    /* Styling for the iframe within the location section */
+    .location iframe {
+        width: 100%; /* Set the width of the iframe to 100% */
+    }
+
+/* Styling for the contact-us section */
+.contact-us {
+    width: 80%; /* Set the width of the contact-us section */
+    margin: auto; /* Center the content horizontally using auto margins */
+}
+
+/* Styling for the row container within the contact-us section */
+.row {
+    margin-top: 5%; /* Add top margin */
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Space the columns evenly */
+}
+
+/* Styling for the columns within the contact-us section */
+.contact-column {
+    flex-basis: 48%; /* Set the basis width of the column to 48% */
+    margin-bottom: 30px; /* Add bottom margin to the column */
+}
+
+    /* Styling for the div elements within the contact columns */
+    .contact-column div {
+        display: flex; /* Use flexbox layout */
+        align-items: center; /* Align items vertically */
+        margin-bottom: 40px; /* Add bottom margin to the div elements */
+    }
+
+        /* Styling for the icon within the contact columns */
+        .contact-column div .fa-solid {
+            font-size: 28px; /* Set the font size of the icon */
+            color: #f44336; /* Set the color of the icon */
+            margin: 10px; /* Add margin to the icon */
+            margin-right: 30px; /* Add right margin to the icon */
+        }
+
+        /* Styling for the paragraphs within the contact columns */
+        .contact-column div p {
+            padding: 0; /* Reset padding for paragraphs */
+        }
+
+        /* Styling for the heading within the contact columns */
+        .contact-column div h5 {
+            margin-bottom: 10px; /* Add bottom margin to the heading */
+            font-size: 20px; /* Set the font size of the heading */
+            color: #555; /* Set the color of the heading */
+            font-weight: 400; /* Set the font weight of the heading */
+        }
+
+/* Styling for the submit button */
+.submit-btn {
+    display: inline-block; /* Display the button as an inline block */
+    text-decoration: none; /* Remove text decoration */
+    color: black; /* Set the text color to black */
+    margin-top: 20px; /* Add top margin to the button */
+    padding: 12px 34px; /* Add padding to the button */
+    font-size: 13px; /* Set the font size of the button */
+    border: 1px solid black; /* Add a border to the button */
+    background: transparent; /* Set transparent background */
+    position: relative; /* Set the button position as relative */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+    /* Styling for the submit button on hover */
+    .submit-btn:hover {
+        border: 1px solid #f44336; /* Change the border color on hover */
+        background: #f44336; /* Change the background color on hover */
+        transition: 1s; /* Add a transition effect */
+    }
+
+/* Styling for the input fields and textarea within the contact columns */
+.contact-column input,
+.contact-column textarea {
+    width: 100%; /* Set the width of the input fields and textarea to 100% */
+    padding: 15px; /* Add padding to the input fields and textarea */
+    margin-bottom: 17px; /* Add bottom margin to the input fields and textarea */
+    outline: none; /* Remove outline */
+    border: 1px solid #ccc; /* Add a border to the input fields and textarea */
+}
+
+/* Media query for screens with a maximum width of 700px */
+@media (max-width: 700px) {
+    .row {
+        flex-direction: column; /* Change the flex direction to vertical stacking */
+    }
+
+    .sub-header h1 {
+        font-size: 30px; /* Set the font size of the sub-header heading */
+        font-weight: 600; /* Set the font weight of the sub-header heading */
+        margin-top: 150px; /* Add top margin to the sub-header heading */
+    }
+}
+
+/* End of contact-us styling */

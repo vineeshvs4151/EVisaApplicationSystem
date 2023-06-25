@@ -1,0 +1,120 @@
+﻿/* Styling for the register form container */
+.Register-form-container {
+    width: 60%; /* Set the width of the form container */
+    margin: auto; /* Center the form container horizontally */
+    padding-top: 100px; /* Add top padding to the form container */
+    background: #fff3f3; /* Set the background color of the form container */
+    border-radius: 25px; /* Add border radius to the form container */
+    margin-bottom: 5%; /* Add bottom margin to the form container */
+    margin-top: 60px; /* Add top margin to the form container */
+    padding: 20px 12px; /* Add padding to the form container */
+    box-sizing: border-box; /* Include padding and border in the total width */
+    border: 1px solid black; /* Add a border to the form container */
+}
+
+/* Styling for the register form header */
+.Register-form-header {
+    display: flex; /* Use flexbox layout */
+    width: 50%; /* Set the width of the form header */
+    margin: auto; /* Center the form header horizontally */
+    padding: 20px 12px; /* Add padding to the form header */
+}
+
+    /* Styling for the image within the register form header */
+    .Register-form-header img {
+        width: 60px; /* Set the width of the image */
+        height: 60px; /* Set the height of the image */
+    }
+
+    /* Styling for the heading within the register form header */
+    .Register-form-header h1 {
+        margin-top: 4px; /* Add top margin to the heading */
+        margin-left: 2px; /* Add left margin to the heading */
+        font-size: 40px; /* Set the font size of the heading */
+        font-weight: 600; /* Set the font weight of the heading */
+    }
+
+/* Styling for the register form */
+.Register-form {
+    width: 60%; /* Set the width of the register form */
+    margin: auto; /* Center the register form horizontally */
+    padding: 20px 12px; /* Add padding to the register form */
+    margin-top: 10px; /* Add top margin to the register form */
+    margin-bottom: 10px; /* Add bottom margin to the register form */
+}
+
+/* Styling for the text input fields within the register form */
+.Register-form-text-box input {
+    width: 100%; /* Set the width of the input fields to 100% */
+    padding: 15px; /* Add padding to the input fields */
+    margin-bottom: 17px; /* Add bottom margin to the input fields */
+    border: 1px solid black; /* Add a border to the input fields */
+}
+
+    /* Styling for the hover effect on the text input fields */
+    .Register-form-text-box input:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+    }
+
+/* Styling for the dropdown input field within the register form */
+.Register-form-text-box .dropbox {
+    width: 100%; /* Set the width of the dropdown input field to 100% */
+    padding: 15px; /* Add padding to the dropdown input field */
+    margin-bottom: 17px; /* Add bottom margin to the dropdown input field */
+    border: 1px solid black; /* Add a border to the dropdown input field */
+}
+
+    /* Styling for the hover effect on the dropdown input field */
+    .Register-form-text-box .dropbox:hover {
+        box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2); /* Add a box shadow on hover */
+    }
+
+/* Styling for the error message within the register form text boxes */
+.Register-form-text-box label {
+    margin-top: 10px; /* Add top margin to the labels */
+    margin-bottom: 10px; /* Add bottom margin to the labels */
+}
+
+/* Styling for the error message within the register form text boxes */
+.Register-text-box .error-message {
+    color: red; /* Set the color of the error message to red */
+}
+
+/* Styling for the gender box */
+.gender-box {
+    display: flex; /* Use flexbox layout */
+    margin-top: 15px; /* Add top margin to the gender box */
+    margin-bottom: 15px; /* Add bottom margin to the gender box */
+    justify-content: space-between; /* Distribute items evenly within the gender box */
+}
+
+/* Styling for the submit button */
+.submit-btn {
+    display: inline-block; /* Display the button as an inline block */
+    text-decoration: none; /* Remove text decoration */
+    color: black; /* Set the text color to black */
+    margin-top: 20px; /* Add top margin to the button */
+    margin-right: 5px; /* Add right margin to the button */
+    margin-left: 5px; /* Add left margin to the button */
+    padding: 12px 34px; /* Add padding to the button */
+    font-size: 13px; /* Set the font size of the button */
+    border: 1px solid black; /* Add a border to the button */
+    background: transparent; /* Set transparent background */
+    position: relative; /* Set the button position as relative */
+    cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+    /* Styling for the submit button on hover */
+    .submit-btn:hover {
+        border: 1px solid #1890ff; /* Change the border color on hover */
+        background: #1890ff; /* Change the background color on hover */
+        transition: 1s; /* Add a transition effect */
+    }
+
+
+/* Styling for paragraphs within the register form */
+.Register p {
+    margin-top: 10px; /* Add top margin to the paragraphs */
+    margin-bottom: 10px; /* Add bottom margin to the paragraphs */
+    justify-content: space-between; /* Distribute items evenly within the paragraphs */
+}

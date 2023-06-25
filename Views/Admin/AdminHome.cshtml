@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "AdminHome";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div>
+    <!-- Importing external CSS file -->
+    <link href="~/Content/MyCSSStyle/Index.css" rel="stylesheet" />
+    <div class="image-container">
+        <div class="image-text">
+            <!-- Displaying a welcome message if the user is logged in -->
+            <h1>
+                Welcome admin
+                <br />
+
+                <!-- Displaying the logo image -->
+                <img src="/Content/Images/e-visa logo.png" class="logo-image" />
+                <br />
+                Visa wave
+            </h1>
+            <!-- Displaying a paragraph with the description -->
+            <p style="font-size: 20px">Online visas and travel authorizations</p>
+        </div>
+    </div>
+</div>

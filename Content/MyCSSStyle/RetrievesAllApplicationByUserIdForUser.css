@@ -1,0 +1,121 @@
+﻿
+.row {
+    height: 100vh; /* Set the height of the row to 100% of the viewport height */
+    margin-top: 40px; /* Add margin space on the top of the row */
+}
+
+
+.trclass-1 {
+    white-space: nowrap; /* Prevent wrapping of content within the table row */
+    background-color: #00a4ff; /* Set the background color for rows with the class 'trclass-1' */
+}
+
+
+/* Set the font-weight property to 600(bold) for rows with the class 'trclass-2' */
+.trclass-2 {
+    font-weight: 600;
+}
+
+
+/* Set the height of the table to 50px */
+.table {
+    height: 50px;
+}
+
+
+/* Apply box-shadow to the table container */
+.table-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Set styles for the icon update link */
+.icon-update-link {
+    display: inline-block; /* Display the icon update link as an inline block element */
+    margin-right: 10px; /* Add margin space on the right side of the icon update link */
+    color: limegreen; /* Set the color for the icon update link */
+    font-size: 18px; /* Set the font size for the icon update link */
+}
+
+    /* Set hover styles for the icon update link */
+    .icon-update-link:hover {
+        color: #7ce547; /* Set the color for the icon update link on hover */
+    }
+
+
+/* Set styles for the icon delete link */
+.icon-delete-link {
+    display: inline-block; /* Display the icon delete link as an inline block element */
+    margin-right: 10px; /* Add margin space on the right side of the icon delete link */
+    color: #ff0000; /* Set the color for the icon delete link */
+    font-size: 18px; /* Set the font size for the icon delete link */
+}
+
+    /* Set hover styles for the icon delete link */
+    .icon-delete-link:hover {
+        color: #d74b4b;
+    }
+
+
+/* Set positioning and styling for the status element */
+.status {
+    position: relative; /* Set the position of the status element as relative */
+    padding: 4px; /* Add padding to the status element */
+    border-radius: 8px; /* Add border-radius to the status element */
+}
+
+
+/* CSS Style For status-value class */
+.status-value {
+    position: relative; /* Set the position of the status value element as relative */
+    z-index: 1; /* Set the z-index of the status value element */
+}
+
+
+/* Set styles for the unapproved status */
+.status-unapproved::before {
+    content: ""; /* Create an empty content before the status element */
+    position: absolute; /* Set the position of the status element as absolute */
+    height: 30px; /* Set the height of the status element */
+    top: 5px; /* Set the top position of the status element */
+    left: 0; /* Set the left position of the status element */
+    right: 0; /* Set the right position of the status element */
+    bottom: 0; /* Set the bottom position of the status element */
+    background-color: red; /* Set the background color for the unapproved status */
+    border-radius: 8px; /* Add border-radius to the status element */
+    z-index: -1; /* Set the z-index of the status element */
+    opacity: 0.6; /* Set the opacity of the status element */
+}
+
+
+
+/* Set styles for the approved status */
+.status-approved::before {
+    content: ""; /* Create an empty content before the status element */
+    position: absolute; /* Set the position of the status element as absolute */
+    height: 30px; /* Set the height of the status element */
+    top: 5px; /* Set the top position of the status element */
+    left: 0; /* Set the left position of the status element */
+    right: 0; /* Set the right position of the status element */
+    bottom: 0; /* Set the bottom position of the status element */
+    background-color: green; /* Set the background color for the approved status */
+    border-radius: 8px; /* Add border-radius to the status element */
+    z-index: -1; /* Set the z-index of the status element */
+    opacity: 0.6; /* Set the opacity of the status element */
+}
+
+
+/* Set styles for the waiting status */
+.status-waiting::before {
+    content: ""; /* Create an empty content before the status element */
+    position: absolute; /* Set the position of the status element as absolute */
+    height: 30px; /* Set the height of the status element */
+    top: 5px; /* Set the top position of the status element */
+    left: 0; /* Set the left position of the status element */
+    right: 0; /* Set the right position of the status element */
+    bottom: 0; /* Set the bottom position of the status element */
+    background-color: yellow; /* Set the background color for the waiting status */
+    border-radius: 8px; /* Add border-radius to the status element */
+    z-index: -1; /* Set the z-index of the status element */
+    opacity: 0.6; /* Set the opacity of the status element */
+}

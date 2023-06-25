@@ -1,0 +1,48 @@
+﻿
+.row {
+    height: 100vh; /* Set the height of the row to 100% of the viewport height */
+    margin-top: 40px; /* Add margin space on the top of the row */
+}
+
+
+.trclass-1 {
+    white-space: nowrap; /* Prevent wrapping of content within the table row */
+    background-color: #00a4ff; /* Set the background color for rows with the class 'trclass-1' */
+}
+
+
+/* Set the font-weight property to 600(bold) for rows with the class 'trclass-2' */
+.trclass-2 {
+    font-weight: 600;
+    width: 100px;
+}
+
+
+/* Set the height of the table to 50px */
+.table {
+    height: 50px;
+}
+
+
+/* Apply box-shadow to the table container */
+.table-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Set styles for the icon delete link */
+.icon-delete-link {
+    display: inline-block; /* Display the icon delete link as an inline block element */
+    margin-right: 10px; /* Add margin space on the right side of the icon delete link */
+    color: #ff0000; /* Set the color for the icon delete link */
+    font-size: 18px; /* Set the font size for the icon delete link */
+}
+
+    /* Set hover styles for the icon delete link */
+    .icon-delete-link:hover {
+        color: #d74b4b;
+    }
+
+
+
